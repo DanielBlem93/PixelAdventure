@@ -38,7 +38,7 @@ class PixelAdventure extends Phaser.Scene {
     })
 
    
-    this.player1 = new Player1(this, 200,200,'player-walk')
+    this.player1 = new Player1(this, 200,200)
     this.physics.add.collider(this.player1, worldLayer)
   }
 
