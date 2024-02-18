@@ -32,9 +32,9 @@ class PreloadAssets {
         this.scene.load.tilemapTiledJSON('level1', 'Tiled_data/testLevel.json')
     }
 
-    preloadItems(){
-        this.scene.load.spritesheet('player-doubleJump', 'assets/Items/Fruits/Bananas.png', { frameWidth: 16, frameHeight: 16 });
-        this.scene.load.spritesheet('player-doubleJump', 'assets/Items/Fruits/Apple.png', { frameWidth: 32, frameHeight: 32 });
+    preloadItems() {
+        this.scene.load.spritesheet('banana', 'assets/Items/Fruits/Bananas.png', { frameWidth: 16, frameHeight: 16 });
+        this.scene.load.spritesheet('apple', 'assets/Items/Fruits/Apple.png', { frameWidth: 32, frameHeight: 32 });
     }
 
 

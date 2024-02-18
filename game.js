@@ -30,6 +30,13 @@ class PixelAdventure extends Phaser.Scene {
 
   addCollisions() {
     this.physics.add.collider(this.player1, this.worldLayer)
+    this.physics.add.overlap(this.player1, this.level.apples, this.handleItemCollisions, null, this)
+  }
+
+  handleItemCollisions(p, a, c) {
+    a.destroy()
+
+
   }
 }
 const config = {
