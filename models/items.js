@@ -1,40 +1,54 @@
-class Item {
+class Items {
     scene
-    constructor(scene, x, y) {
+    animationKeys
+
+    constructor(scene, x, y, layer) {
         this.scene = scene;
-        this.apples = scene.physics.add.group();
+        this.items = scene.physics.add.group();
+        this.animationKeys = [];
+        // this.createItems(layer)
     }
 
     createItems(tile) {
-        let pickup;
+      
+        let fruitType = tile.properties.kind;
         const x = tile.getCenterX();
         const y = tile.getCenterY() - 16;
-        if (tile.properties.collectable) {
-            pickup = this.apples.create(x, y, 'apple');
+        const pickup = this.items.create(x, y, fruitType);
 
-        }
         if (pickup) {
             pickup.body.width = 32;
             pickup.body.height = 32;
             pickup.body.allowGravity = false;
+        
+            this.createItemAnimations(fruitType)
+
         }
-   
+       this.scene.items = this.items
     }
-    createItemAnimations() {
-        this.scene.anims.create({
-            key: "apple-animation",
-            frames: this.scene.anims.generateFrameNumbers("apple", { start: 0, end: 16 }),
-            frameRate: 20,
-            repeat: -1,
-        });
+
+
+    createItemAnimations(fruitType) {
+
+        if (!this.isAnimation(fruitType)) {
+            this.scene.anims.create({
+                key: fruitType + "-animation",
+                frames: this.scene.anims.generateFrameNumbers(fruitType, { start: 0, end: 16 }),
+                frameRate: 20,
+                repeat: -1,
+            });
+            this.animationKeys.push(fruitType + "-animation");
+        }
+    }
+
+    isAnimation(fruitType) {
+        return this.animationKeys.includes(fruitType + '-animation');
     }
 
     playItemsAnimation() {
-        this.apples.getChildren().forEach(apple => {
-            console.log(apple)
-            apple.anims.play('apple-animation', true);
-    
+        this.items.getChildren().forEach(item => {
+            item.anims.play(item.texture.key + '-animation', true);
         });
     }
-
+  
 }

@@ -20,8 +20,8 @@ class PixelAdventure extends Phaser.Scene {
     this.level = new Level(this, 'level1');
     this.level.create();
     this.player1 = new Player1(this, 200, 200)
-
     this.addCollisions()
+
   }
 
   update() {
@@ -30,13 +30,11 @@ class PixelAdventure extends Phaser.Scene {
 
   addCollisions() {
     this.physics.add.collider(this.player1, this.worldLayer)
-    this.physics.add.overlap(this.player1, this.level.apples, this.handleItemCollisions, null, this)
+    this.physics.add.overlap(this.player1, this.items, this.handleItemCollisions, null, this)
   }
 
   handleItemCollisions(p, a, c) {
     a.destroy()
-
-
   }
 }
 const config = {

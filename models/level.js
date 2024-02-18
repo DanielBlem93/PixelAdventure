@@ -10,7 +10,7 @@ class Level {
     create() {
 
         this.createWorldlayers(this.currentLevel)
-        this.item = new Item(this.scene)
+   
     }
 
     createWorldlayers(level) {
@@ -25,27 +25,22 @@ class Level {
 
         worldLayer.setCollisionByProperty({ collides: true });
         this.scene.worldLayer = worldLayer
-
-
-        // this.addDebugColors(worldLayer)
-
-
-
+        this.addDebugColors(worldLayer)
         this.createItems(pickupsLayer)
 
     }
 
 
     createItems(pickupsLayer) {
-        this.items = this.scene.physics.add.group()
-        const item = new Item(this.scene);
+        const items = new Items(this.scene);
         pickupsLayer.forEachTile(tile => {
             if (tile.index !== -1) {
-                item.createItems(tile);
+                items.createItems(tile);
             }
         });
-        item.createItemAnimations()
-        item.playItemsAnimation()
+
+        items.playItemsAnimation()
+     
     }
     addDebugColors(worldLayer) {
         const debugGraphics = this.scene.add.graphics().setAlpha(0.5);
@@ -55,6 +50,5 @@ class Level {
             faceColor: new Phaser.Display.Color(0, 255, 0, 255)
         });
     }
-
 
 }

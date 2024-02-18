@@ -33,8 +33,11 @@ class PreloadAssets {
     }
 
     preloadItems() {
-        this.scene.load.spritesheet('banana', 'assets/Items/Fruits/Bananas.png', { frameWidth: 16, frameHeight: 16 });
-        this.scene.load.spritesheet('apple', 'assets/Items/Fruits/Apple.png', { frameWidth: 32, frameHeight: 32 });
+        const fruitTypes = ['apple', 'bananas', 'cherries', 'kiwi', 'melon', 'orange', 'pineapple', 'strawberry'];        
+        fruitTypes.forEach(fruitType => {
+            this.scene.load.spritesheet(fruitType, `assets/Items/Fruits/${fruitType}.png`, { frameWidth: 32, frameHeight: 32 });
+        });
+
     }
 
 
