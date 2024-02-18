@@ -18,7 +18,6 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     }
 
 
-
     update(cursor) {
 
         this.WalkAndIdle(cursor)
@@ -42,6 +41,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.idleAnimation(touchinGround)
     }
 
+
     movePlayer(touchinGround, flipx, speed) {
         this.setFlipX(flipx)
         this.setVelocityX(speed);// right 130 / left -130
@@ -49,12 +49,12 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.anims.play("left", true);
     }
 
+
     idleAnimation(touchinGround) {
         this.setVelocityX(0);
         if (touchinGround)
             this.anims.play("idle", true);
     }
-
 
 
     jumpAnimations(cursor) {
@@ -74,6 +74,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.anims.play("jump", true) //first jump animation
         }
     }
+
 
     jump() {
         this.anims.play('double-jump')
@@ -101,13 +102,6 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     }
 
 
-
-
-    doubleJump(cursor, isJumpJustDown, isJustUp) {
-
-
-    }
-
     createAnimations(scene) {
         this.walkAndIdleAnimation(scene)
         this.jumpAndFallAnimation(scene)
@@ -121,7 +115,6 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             frameRate: 20,
             repeat: -1,
         });
-
         scene.anims.create({
             key: "right",
             frames: this.anims.generateFrameNumbers("player-walk", { start: 0, end: 11 }),
@@ -133,7 +126,6 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             frames: this.anims.generateFrameNumbers("player-walk", { start: 0, end: 11 }),
             frameRate: 20,
             repeat: -1,
-
         });
     }
 
@@ -143,22 +135,18 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             frames: this.anims.generateFrameNumbers("player-jump", { start: 0, end: 0 }),
             frameRate: 20,
             repeat: -1,
-
         });
         scene.anims.create({
             key: "fall",
             frames: this.anims.generateFrameNumbers("player-fall", { start: 0, end: 0 }),
             frameRate: 20,
             repeat: -1,
-
         });
         scene.anims.create({
             key: "double-jump",
             frames: this.anims.generateFrameNumbers("player-doubleJump", { start: 0, end: 5 }),
             frameRate: 20,
             repeat: 0,
-
-
         });
     }
 }

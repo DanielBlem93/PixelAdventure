@@ -2,5 +2,6 @@
 
 /node_modules
 /Tiled_data/TiledFiles
+/Tiled_data/worked
 /package-lock.json
 /package.json

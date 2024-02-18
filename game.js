@@ -2,6 +2,8 @@
 class PixelAdventure extends Phaser.Scene {
   assetsLoader
   player1
+  level
+  worldlayer
   constructor() {
     super('PixelAdventure')
     this.assetsLoader = new PreloadAssets(this)
@@ -10,43 +12,25 @@ class PixelAdventure extends Phaser.Scene {
   cursors
   preload() {
     this.assetsLoader.preload();
-
- 
-   
   }
 
   create() {
- 
+
     this.cursors = this.input.keyboard.createCursorKeys()
+    this.level = new Level(this, 'level1');
+    this.level.create();
+    this.player1 = new Player1(this, 200, 200)
 
-    const map = this.make.tilemap({ key: 'map' })
-    const tileset = map.addTilesetImage('Terrain', 'Terrain')
-    const Hintergrund2 = map.addTilesetImage('Hintergrund2', 'Hintergrund2')
-    const bellowLayer = map.createLayer('belowPlayer', Hintergrund2, 0, 0)
-    const worldLayer = map.createLayer('worldLayer', tileset, 0, 0)
-    const aboveLayer = map.createLayer('abovePlayer', tileset, 0, 0)
-
-    worldLayer.setCollisionByProperty({ collides: true })
-
-
-
-    const debugGraphics = this.add.graphics().setAlpha(0.5)
-    worldLayer.renderDebug(debugGraphics, {
-      tileColor: null,
-      collidingTileColor: new Phaser.Display.Color(255, 255, 50, 255),
-      faceColor: new Phaser.Display.Color(0, 255, 0, 255)
-    })
-
-   
-    this.player1 = new Player1(this, 200,200)
-    this.physics.add.collider(this.player1, worldLayer)
+    this.addCollisions()
   }
 
   update() {
     this.player1.update(this.cursors);
   }
 
-
+  addCollisions() {
+    this.physics.add.collider(this.player1, this.worldLayer)
+  }
 }
 const config = {
   type: Phaser.AUTO,
