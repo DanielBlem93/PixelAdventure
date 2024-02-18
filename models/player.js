@@ -13,9 +13,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this);
         scene.physics.add.existing(this);
         this.setCollideWorldBounds(true);
-        this.setGravityY(100);
-
-
+        this.setGravityY(600);
         this.createAnimations(scene);
     }
 
@@ -24,67 +22,81 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     update(cursor) {
 
         this.WalkAndIdle(cursor)
-        this.jump(cursor)
-        // this.falling()
+        this.jumpAnimations(cursor)
+        this.falling()
 
     }
 
 
     WalkAndIdle(cursor) {
-        if (cursor.left.isDown) {
-            this.setFlipX(true)
-            this.setVelocityX(-160);
-            this.anims.play("left", true);
+        let touchinGround = this.body.blocked.down
+        let noKeyPressd = !cursor.left.isDown && !cursor.right.isDown && !cursor.up.isDown
 
-        } else if (cursor.right.isDown) {
-            this.setFlipX(false)
-            this.setVelocityX(160);
+        if (cursor.left.isDown)
+            this.movePlayer(touchinGround, true, -130)
+
+        else if (cursor.right.isDown)
+            this.movePlayer(touchinGround, false, 130)
+
+        else if (noKeyPressd)
+            this.idleAnimation(touchinGround)
+    }
+
+    movePlayer(touchinGround, flipx, speed) {
+        this.setFlipX(flipx)
+        this.setVelocityX(speed);// right 130 / left -130
+        if (touchinGround)
             this.anims.play("left", true);
-        } else {
-            this.setVelocityX(0);
+    }
+
+    idleAnimation(touchinGround) {
+        this.setVelocityX(0);
+        if (touchinGround)
             this.anims.play("idle", true);
-        }
     }
 
 
 
-    jump(cursor) {
-        this.jumped = true
+    jumpAnimations(cursor) {
         let isJumpJustDown = Phaser.Input.Keyboard.JustDown(cursor.up)
-        let isJustUp = Phaser.Input.Keyboard.JustUp(cursor.up)
         let touchinGround = this.body.blocked.down
         let onAir = this.body.blocked.none
+        this.jumped = true
+
         // jumps when pressing up
         if (isJumpJustDown && (touchinGround || this.jumpcounter < 2)) {
-            this.setVelocityY(-380)
-            this.jumpcounter++
+            this.jump()
         }
-
         if (touchinGround && !isJumpJustDown) {
-            this.jumpcounter = 0
-            this.jumped= false
+            this.resetJump()
         }
-
         if (onAir && this.jumpcounter <= 1) {
-       
-            this.anims.play("jump",true)
+            this.anims.play("jump", true) //first jump animation
         }
-        // else if (onAir && this.jumpcounter > 1) {
-        //     console.log("Playing double jump animation");
-          
-        //     this.anims.play('double-jump')
-        //     console.log(this.anims.getTotalFrames())
-  
-        // }
-
-      
-
     }
+
+    jump() {
+        this.anims.play('double-jump')
+        this.on('animationcomplete-double-jump', function () {
+            this.anims.play("fall", true);
+        })
+        this.setVelocityY(-380)
+        this.jumpcounter++
+    }
+
+    resetJump() {
+        this.jumpcounter = 0
+        this.jumped = false
+    }
+
+
 
     falling() {
         if (this.body.velocity.y > 0) {
             this.anims.play("fall", true);
-    
+            if (this.jumpcounter < 1) {
+                this.jumpcounter++
+            }
         }
     }
 
@@ -121,7 +133,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             frames: this.anims.generateFrameNumbers("player-walk", { start: 0, end: 11 }),
             frameRate: 20,
             repeat: -1,
-        
+
         });
     }
 
@@ -143,10 +155,10 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         scene.anims.create({
             key: "double-jump",
             frames: this.anims.generateFrameNumbers("player-doubleJump", { start: 0, end: 5 }),
-            frameRate: 8,
-            repeat: -1,
-            
-        
+            frameRate: 20,
+            repeat: 0,
+
+
         });
     }
 }
