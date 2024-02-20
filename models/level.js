@@ -1,6 +1,6 @@
 class Level {
-    scene
     items
+    scene
     currentLevel
     constructor(scene, level) {
         this.scene = scene;
@@ -9,27 +9,39 @@ class Level {
 
     create() {
 
-        this.createWorldlayers(this.currentLevel)
-   
+        this.createLevel(this.currentLevel)
+
     }
 
-    createWorldlayers(level) {
+    createLevel(level) {
         const map = this.scene.make.tilemap({ key: level });
         const tileset = map.addTilesetImage('Terrain', 'Terrain');
         const Hintergrund2 = map.addTilesetImage('Hintergrund2', 'Hintergrund2');
-        const appes = map.addTilesetImage('apple', 'apple');
         const bellowLayer = map.createLayer('belowPlayer', Hintergrund2, 0, 0);
         const worldLayer = map.createLayer('worldLayer', tileset, 0, 0);
         const aboveLayer = map.createLayer('abovePlayer', tileset, 0, 0);
+        const trapsLayer = map.createLayer('traps', tileset, 0, 0);
         const pickupsLayer = map.createLayer('pickups', tileset, 0, 0);
-
-        worldLayer.setCollisionByProperty({ collides: true });
-        this.scene.worldLayer = worldLayer
-        this.addDebugColors(worldLayer)
+;
+        this.createTraps(trapsLayer)
         this.createItems(pickupsLayer)
+   
+        this.scene.worldLayer = worldLayer
+        this.scene.trapsLayer = trapsLayer
+        // this.addDebugColors(worldLayer)
 
+        console.log(this.scene)
     }
 
+    createTraps(trapsLayer) {
+        const traps = new Traps(this.scene)
+        trapsLayer.forEachTile(tile => {
+            if (tile.index !== -1) {
+                traps.createTraps(tile)
+            }
+        })
+        traps.playTrapsAnimation()
+    }
 
     createItems(pickupsLayer) {
         const items = new Items(this.scene);
@@ -40,7 +52,7 @@ class Level {
         });
 
         items.playItemsAnimation()
-     
+
     }
     addDebugColors(worldLayer) {
         const debugGraphics = this.scene.add.graphics().setAlpha(0.5);

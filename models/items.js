@@ -1,12 +1,11 @@
 class Items {
     scene
     animationKeys
-
-    constructor(scene, x, y, layer) {
+    itmes
+    constructor(scene) {
         this.scene = scene;
         this.items = scene.physics.add.group();
         this.animationKeys = [];
-        // this.createItems(layer)
     }
 
     createItems(tile) {
@@ -23,7 +22,7 @@ class Items {
         
             this.createItemAnimations(fruitType)
 
-        }
+        }     console.log(pickup)
        this.scene.items = this.items
     }
 

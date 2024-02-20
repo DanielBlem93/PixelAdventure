@@ -3,7 +3,6 @@ class PixelAdventure extends Phaser.Scene {
   assetsLoader
   player1
   level
-  worldlayer
   constructor() {
     super('PixelAdventure')
     this.assetsLoader = new PreloadAssets(this)
@@ -19,6 +18,7 @@ class PixelAdventure extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys()
     this.level = new Level(this, 'level1');
     this.level.create();
+
     this.player1 = new Player1(this, 200, 200)
     this.addCollisions()
 
@@ -26,15 +26,27 @@ class PixelAdventure extends Phaser.Scene {
 
   update() {
     this.player1.update(this.cursors);
+    
+
   }
 
   addCollisions() {
+    
+    this.worldLayer.setCollisionByProperty({ collides: true })
     this.physics.add.collider(this.player1, this.worldLayer)
+    this.physics.add.collider(this.player1, this.traps)
     this.physics.add.overlap(this.player1, this.items, this.handleItemCollisions, null, this)
+  
   }
 
-  handleItemCollisions(p, a, c) {
-    a.destroy()
+
+  handleItemCollisions(player, item) {
+    // Überprüfe, ob es sich um das richtige Item handelt
+    if (item && item.active) {
+      // Zerstöre das Item
+      item.destroy();
+      console.log('Item kollidiert');
+    }
   }
 }
 const config = {

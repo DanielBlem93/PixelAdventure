@@ -141,6 +141,7 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":25,
          "id":6,
+         "locked":true,
          "name":"pickups",
          "opacity":1,
          "type":"tilelayer",
@@ -148,9 +149,45 @@
          "width":25,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 326, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 326, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 326, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":25,
+         "id":7,
+         "name":"traps",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":7,
- "nextobjectid":1,
+ "nextlayerid":9,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -2821,6 +2858,204 @@
                          "name":"kind",
                          "type":"string",
                          "value":"bananas"
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":1,
+         "firstgid":325,
+         "image":"..\/assets\/Traps\/Falling Platforms\/Off.png",
+         "imageheight":10,
+         "imagewidth":32,
+         "margin":0,
+         "name":"trap-fan",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":10,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":10
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_fan"
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":4,
+         "firstgid":326,
+         "image":"..\/assets\/Traps\/Falling Platforms\/On (32x10).png",
+         "imageheight":10,
+         "imagewidth":128,
+         "margin":0,
+         "name":"trap_fan",
+         "spacing":0,
+         "tilecount":4,
+         "tileheight":10,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":10
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_fan"
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":10
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_fan"
+                        }]
+                }, 
+                {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":10
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_fan"
+                        }]
+                }, 
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":4
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":10
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_fan"
                         }]
                 }],
          "tilewidth":32

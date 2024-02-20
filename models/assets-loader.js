@@ -10,6 +10,8 @@ class PreloadAssets {
         this.preloadPlayerSheets()
         this.preloadTerrainAssets()
         this.preloadItems()
+
+        this.preloadTraps()
         //particles
         this.scene.load.image('dust', 'assets/Other/Dust Particle.png')
     }
@@ -38,6 +40,11 @@ class PreloadAssets {
             this.scene.load.spritesheet(fruitType, `assets/Items/Fruits/${fruitType}.png`, { frameWidth: 32, frameHeight: 32 });
         });
 
+    }
+
+    preloadTraps(){
+        this.scene.load.image('trap_fan_off', 'assets/Traps/Falling Platforms/Off.png')
+        this.scene.load.spritesheet('trap_fan', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
     }
 
 
