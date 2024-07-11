@@ -54,6 +54,8 @@ class Level {
         items.playItemsAnimation()
 
     }
+
+    
     addDebugColors(worldLayer) {
         const debugGraphics = this.scene.add.graphics().setAlpha(0.5);
         worldLayer.renderDebug(debugGraphics, {

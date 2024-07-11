@@ -22,6 +22,40 @@ class PixelAdventure extends Phaser.Scene {
     this.player1 = new Player1(this, 200, 200)
     this.addCollisions()
 
+
+
+
+
+
+    this.graphics = this.add.graphics();
+
+        this.follower = { t: 0, vec: new Phaser.Math.Vector2() };
+
+        //  The curves do not have to be joined
+        const line1 = new Phaser.Curves.Line([ 100, 100, 100, 110 ]);
+
+        this.path = this.add.path();
+
+        // path = new Phaser.Curves.Path();
+
+        this.path.add(line1);
+
+
+        this.tweens.add({
+            targets: this.follower,
+            t: 1,
+            ease: 'Linear',
+            duration: 800,
+            yoyo: true,
+            repeat: -1
+        });
+
+
+
+
+
+
+
   }
 
   update() {
@@ -73,7 +107,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      // debug: true,
       gravity: {
         y: 600
       }

@@ -2,28 +2,32 @@ class Items {
     scene
     animationKeys
     itmes
+
+    collisionWidth = 16
+    collisionHeight = 18
+
+
     constructor(scene) {
         this.scene = scene;
         this.items = scene.physics.add.group();
         this.animationKeys = [];
+
     }
 
     createItems(tile) {
-      
+
         let fruitType = tile.properties.kind;
         const x = tile.getCenterX();
         const y = tile.getCenterY() - 16;
         const pickup = this.items.create(x, y, fruitType);
 
         if (pickup) {
-            pickup.body.width = 32;
-            pickup.body.height = 32;
             pickup.body.allowGravity = false;
-        
+            setCollisionDimensions(pickup, this.collisionWidth, this.collisionHeight)
             this.createItemAnimations(fruitType)
 
-        }     console.log(pickup)
-       this.scene.items = this.items
+        } console.log(pickup)
+        this.scene.items = this.items
     }
 
 
@@ -49,5 +53,5 @@ class Items {
             item.anims.play(item.texture.key + '-animation', true);
         });
     }
-  
+
 }

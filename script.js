@@ -21,7 +21,7 @@ function startGame() {
 
 }
 
-function changeSound(){
+function changeSound() {
     let soundOn = document.getElementById('soundOn')
     let soundOff = document.getElementById('mute')
     if (mute) {
@@ -38,3 +38,7 @@ function changeSound(){
     mute = !mute
 }
 
+function setCollisionDimensions(instance, width, height) {
+    instance.body.setSize(width, height, true)
+
+}

@@ -5,7 +5,8 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     jumped = false
     canDoubleJump = false;
     doubleJumpAnimationState = true
-
+    collisionWidth = 20
+    collisionHeight = 30
     jumpcounter = 0
 
     constructor(scene, x, y) {
@@ -15,7 +16,9 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         this.setCollideWorldBounds(true);
         this.setGravityY(600);
         this.createAnimations(scene);
+        setCollisionDimensions(this, this.collisionWidth, this.collisionHeight)
     }
+
 
 
     update(cursor) {

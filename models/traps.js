@@ -3,10 +3,12 @@ class Traps {
     traps
     animationKeys
 
+
     constructor(scene) {
         this.scene = scene;
         this.traps = scene.physics.add.group();
         this.trapAnimationKeys = []
+        const line1 = new Phaser.Curves.Line([100, 100, 100, 110]);
     }
 
 
@@ -30,9 +32,10 @@ class Traps {
             console.log('traps', this.traps)
             trap.body.allowDrag = false
             trap.setPushable(false)
-            
+
         }
         this.scene.traps = this.traps
+
     }
 
 
@@ -57,8 +60,21 @@ class Traps {
     playTrapsAnimation() {
         this.traps.getChildren().forEach(trap => {
             trap.anims.play(trap.texture.key + '-animation', true);
+            this.addUpDownMotion(trap)
         });
+
     }
 
-
+    addUpDownMotion(trap) {
+        let duration = Phaser.Math.Between(500, 700);
+        let bounce = Phaser.Math.Between(1, 3);
+        this.scene.tweens.add({
+            targets: trap,
+            y: trap.body.center.y + bounce,
+            duration: duration,
+            repeat: -1,
+            yoyo: true,
+            ease: 'quint.inout'
+        });
+    }
 }
