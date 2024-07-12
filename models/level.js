@@ -35,11 +35,13 @@ class Level {
 
     createTraps(trapsLayer) {
         const traps = new Traps(this.scene)
+  
         trapsLayer.forEachTile(tile => {
             if (tile.index !== -1) {
                 traps.createTraps(tile)
             }
         })
+
         traps.playTrapsAnimation()
     }
 

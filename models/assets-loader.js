@@ -43,8 +43,8 @@ class PreloadAssets {
     }
 
     preloadTraps(){
-        this.scene.load.image('trap_fan_off', 'assets/Traps/Falling Platforms/Off.png')
-        this.scene.load.spritesheet('trap_fan', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
+        this.scene.load.image('trap_falling_platform_off', 'assets/Traps/Falling Platforms/Off.png')
+        this.scene.load.spritesheet('trap_falling_platform', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
     }
 
 

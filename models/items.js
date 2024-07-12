@@ -26,12 +26,13 @@ class Items {
             setCollisionDimensions(pickup, this.collisionWidth, this.collisionHeight)
             this.createItemAnimations(fruitType)
 
-        } console.log(pickup)
+        } 
         this.scene.items = this.items
     }
 
 
     createItemAnimations(fruitType) {
+
 
         if (!this.isAnimation(fruitType)) {
             this.scene.anims.create({
@@ -49,6 +50,7 @@ class Items {
     }
 
     playItemsAnimation() {
+        let rate = Phaser.Math.Between(50, 800);
         this.items.getChildren().forEach(item => {
             item.anims.play(item.texture.key + '-animation', true);
         });

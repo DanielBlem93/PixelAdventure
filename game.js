@@ -3,9 +3,14 @@ class PixelAdventure extends Phaser.Scene {
   assetsLoader
   player1
   level
+  particles
+  traps
+  trapService
   constructor() {
     super('PixelAdventure')
     this.assetsLoader = new PreloadAssets(this)
+    this.traps = null
+    this.trapService = new Trap_Service(this)
   }
 
   cursors
@@ -23,54 +28,26 @@ class PixelAdventure extends Phaser.Scene {
     this.addCollisions()
 
 
-
-
-
-
-    this.graphics = this.add.graphics();
-
-        this.follower = { t: 0, vec: new Phaser.Math.Vector2() };
-
-        //  The curves do not have to be joined
-        const line1 = new Phaser.Curves.Line([ 100, 100, 100, 110 ]);
-
-        this.path = this.add.path();
-
-        // path = new Phaser.Curves.Path();
-
-        this.path.add(line1);
-
-
-        this.tweens.add({
-            targets: this.follower,
-            t: 1,
-            ease: 'Linear',
-            duration: 800,
-            yoyo: true,
-            repeat: -1
-        });
-
-
-
-
-
-
-
   }
 
   update() {
     this.player1.update(this.cursors);
-    
+
 
   }
 
   addCollisions() {
-    
+
     this.worldLayer.setCollisionByProperty({ collides: true })
     this.physics.add.collider(this.player1, this.worldLayer)
-    this.physics.add.collider(this.player1, this.traps)
+    this.physics.add.collider(this.player1, this.traps, this.handleTrapCollisions, null, this)
     this.physics.add.overlap(this.player1, this.items, this.handleItemCollisions, null, this)
-  
+
+  }
+
+  handleTrapCollisions(player, trap) {
+    if (trap.body.touching.up)
+    this.trapService.stopTrapEffects(trap)
   }
 
 
@@ -82,7 +59,13 @@ class PixelAdventure extends Phaser.Scene {
       console.log('Item kollidiert');
     }
   }
+
+
+  
+
+ 
 }
+
 const config = {
   type: Phaser.AUTO,
   width: 500,

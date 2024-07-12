@@ -155,14 +155,15 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 326, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 326, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -174,10 +175,10 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":25,
          "id":7,
+         "locked":true,
          "name":"traps",
          "opacity":1,
          "type":"tilelayer",
@@ -2883,12 +2884,27 @@
                          "value":true
                         }, 
                         {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
                         }, 
                         {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
                          "type":"bool",
                          "value":false
                         }, 
@@ -2905,7 +2921,7 @@
                         {
                          "name":"trap",
                          "type":"string",
-                         "value":"trap_fan"
+                         "value":"trap_falling_platform"
                         }]
                 }],
          "tilewidth":32
@@ -2923,6 +2939,23 @@
          "tileheight":10,
          "tiles":[
                 {
+                 "animation":[
+                        {
+                         "duration":50,
+                         "tileid":0
+                        }, 
+                        {
+                         "duration":50,
+                         "tileid":1
+                        }, 
+                        {
+                         "duration":50,
+                         "tileid":2
+                        }, 
+                        {
+                         "duration":50,
+                         "tileid":3
+                        }],
                  "id":0,
                  "properties":[
                         {
@@ -2931,12 +2964,27 @@
                          "value":true
                         }, 
                         {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
                         }, 
                         {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
                          "type":"bool",
                          "value":false
                         }, 
@@ -2953,7 +3001,7 @@
                         {
                          "name":"trap",
                          "type":"string",
-                         "value":"trap_fan"
+                         "value":"trap_falling_platform"
                         }]
                 }, 
                 {
@@ -2965,12 +3013,27 @@
                          "value":true
                         }, 
                         {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
                         }, 
                         {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
                          "type":"bool",
                          "value":false
                         }, 
@@ -2987,7 +3050,7 @@
                         {
                          "name":"trap",
                          "type":"string",
-                         "value":"trap_fan"
+                         "value":"trap_falling_platform"
                         }]
                 }, 
                 {
@@ -2999,12 +3062,27 @@
                          "value":true
                         }, 
                         {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
                         }, 
                         {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
                          "type":"bool",
                          "value":false
                         }, 
@@ -3021,7 +3099,7 @@
                         {
                          "name":"trap",
                          "type":"string",
-                         "value":"trap_fan"
+                         "value":"trap_falling_platform"
                         }]
                 }, 
                 {
@@ -3033,12 +3111,27 @@
                          "value":true
                         }, 
                         {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
                         }, 
                         {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
                          "type":"bool",
                          "value":false
                         }, 
@@ -3055,7 +3148,7 @@
                         {
                          "name":"trap",
                          "type":"string",
-                         "value":"trap_fan"
+                         "value":"trap_falling_platform"
                         }]
                 }],
          "tilewidth":32
