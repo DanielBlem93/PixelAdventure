@@ -6,11 +6,13 @@ class PixelAdventure extends Phaser.Scene {
   particles
   traps
   trapService
+  scene
   constructor() {
-    super('PixelAdventure')
+    super()
     this.assetsLoader = new PreloadAssets(this)
     this.traps = null
     this.trapService = new Trap_Service(this)
+
   }
 
   cursors
@@ -21,13 +23,13 @@ class PixelAdventure extends Phaser.Scene {
   create() {
 
     this.cursors = this.input.keyboard.createCursorKeys()
+
+
     this.level = new Level(this, 'level1');
     this.level.create();
 
     this.player1 = new Player1(this, 200, 200)
     this.addCollisions()
-
-
   }
 
   update() {
@@ -35,6 +37,12 @@ class PixelAdventure extends Phaser.Scene {
 
 
   }
+
+  restart(){
+    this.scene.restart()
+  }
+
+  
 
   addCollisions() {
 
@@ -46,24 +54,22 @@ class PixelAdventure extends Phaser.Scene {
   }
 
   handleTrapCollisions(player, trap) {
-    if (trap.body.touching.up)
     this.trapService.stopTrapEffects(trap)
+
   }
 
 
   handleItemCollisions(player, item) {
-    // Überprüfe, ob es sich um das richtige Item handelt
     if (item && item.active) {
-      // Zerstöre das Item
       item.destroy();
       console.log('Item kollidiert');
     }
   }
 
 
-  
 
- 
+
+
 }
 
 const config = {
@@ -90,7 +96,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      // debug: true,
+      debug: true,
       gravity: {
         y: 600
       }

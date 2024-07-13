@@ -8,7 +8,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     collisionWidth = 20
     collisionHeight = 30
     jumpcounter = 0
-
+    dead = false
     constructor(scene, x, y) {
         super(scene, x, y);
         scene.add.existing(this);
@@ -17,15 +17,19 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         this.setGravityY(600);
         this.createAnimations(scene);
         setCollisionDimensions(this, this.collisionWidth, this.collisionHeight)
+        this.remove
+        console.log(this)
     }
 
 
 
     update(cursor) {
+        if (!this.dead) {
+            this.WalkAndIdle(cursor)
+            this.jumpAnimations(cursor)
+            this.falling()
+        }
 
-        this.WalkAndIdle(cursor)
-        this.jumpAnimations(cursor)
-        this.falling()
 
     }
 
@@ -105,26 +109,64 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     }
 
 
+    playerDies(trap) {
+        this.palyDeadAnimation()
+        this.playerKnockBack()
+
+        this.scene.time.delayedCall(1500, () => {
+            this.dead = false
+            this.scene.restart()
+        });
+    }
+
+    palyDeadAnimation() {
+        this.dead = true
+        this.anims.pause()
+        this.anims.play('hit'); // Todesanimation abspielen (falls vorhanden)
+        this.body.allowRotation = true
+        this.body.angularVelocity = -200
+        this.body.checkCollision.none = true;
+        this.setCollideWorldBounds(false);
+    }
+
+    playerKnockBack() {
+        this.body.enable = true;
+        this.body.setVelocityY(-350); // Knockback nach oben
+        if (this.body.touching.right) {
+            this.body.setVelocityX(-100); // Knockback nach links
+            this.body.angularVelocity = -150
+        } else if (this.body.touching.left) {
+            this.body.setVelocityX(100); // Knockback nach rechts
+            this.body.angularVelocity = 150
+        } else {
+            this.body.setVelocityX(Phaser.Math.Between(-100, 100))
+        }
+    }
+
+
+
+
     createAnimations(scene) {
         this.walkAndIdleAnimation(scene)
         this.jumpAndFallAnimation(scene)
+        this.deadAnimation(scene)
     }
 
 
     walkAndIdleAnimation(scene) {
-        scene.anims.create({
+        this.anims.create({
             key: "idle",
             frames: this.anims.generateFrameNumbers("player-idle", { start: 0, end: 10 }),
             frameRate: 20,
             repeat: -1,
         });
-        scene.anims.create({
+        this.anims.create({
             key: "right",
             frames: this.anims.generateFrameNumbers("player-walk", { start: 0, end: 11 }),
             frameRate: 20,
             repeat: -1,
         });
-        scene.anims.create({
+        this.anims.create({
             key: "left",
             frames: this.anims.generateFrameNumbers("player-walk", { start: 0, end: 11 }),
             frameRate: 20,
@@ -133,23 +175,35 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     }
 
     jumpAndFallAnimation(scene) {
-        scene.anims.create({
+        this.anims.create({
             key: "jump",
             frames: this.anims.generateFrameNumbers("player-jump", { start: 0, end: 0 }),
             frameRate: 20,
             repeat: -1,
         });
-        scene.anims.create({
+        this.anims.create({
             key: "fall",
             frames: this.anims.generateFrameNumbers("player-fall", { start: 0, end: 0 }),
             frameRate: 20,
             repeat: -1,
         });
-        scene.anims.create({
+        this.anims.create({
             key: "double-jump",
             frames: this.anims.generateFrameNumbers("player-doubleJump", { start: 0, end: 5 }),
             frameRate: 20,
             repeat: 0,
         });
     }
+
+
+    deadAnimation(scene) {
+        this.anims.create({
+            key: "hit",
+            frames: this.anims.generateFrameNumbers("player-hit", { start: 0, end: 6 }),
+            frameRate: 20,
+            repeat: 0,
+        });
+    }
+
+
 }

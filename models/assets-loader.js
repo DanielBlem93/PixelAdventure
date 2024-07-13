@@ -10,7 +10,6 @@ class PreloadAssets {
         this.preloadPlayerSheets()
         this.preloadTerrainAssets()
         this.preloadItems()
-
         this.preloadTraps()
         //particles
         this.scene.load.image('dust', 'assets/Other/Dust Particle.png')
@@ -25,6 +24,7 @@ class PreloadAssets {
         this.scene.load.spritesheet('player-fall', 'assets/Main Characters/Virtual Guy/Fall (32x32).png', { frameWidth: 32, frameHeight: 32 });
         this.scene.load.spritesheet('player-idle', 'assets/Main Characters/Virtual Guy/Idle (32x32).png', { frameWidth: 32, frameHeight: 32 });
         this.scene.load.spritesheet('player-doubleJump', 'assets/Main Characters/Virtual Guy/Double Jump (32x32).png', { frameWidth: 32, frameHeight: 32 });
+        this.scene.load.spritesheet('player-hit', 'assets/Main Characters/Virtual Guy/Hit (32x32).png', { frameWidth: 32, frameHeight: 32 });
     }
 
     preloadTerrainAssets() {
@@ -43,8 +43,9 @@ class PreloadAssets {
     }
 
     preloadTraps(){
-        this.scene.load.image('trap_falling_platform_off', 'assets/Traps/Falling Platforms/Off.png')
         this.scene.load.spritesheet('trap_falling_platform', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
+        this.scene.load.spritesheet('trap_spikes', 'assets/Traps/Spikes/spike.png', { frameWidth: 16, frameHeight: 16 });
+
     }
 
 

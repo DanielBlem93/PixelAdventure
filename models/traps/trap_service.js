@@ -7,12 +7,42 @@ class Trap_Service {
 
 
     stopTrapEffects(trap) {
-        this.scene.time.delayedCall(300, () => {
-            this.stopTween(trap)
-            this.stopParticels(trap)
-            this.stopAnimations(trap)
-        });
         this.onTrapCollision(trap)
+    }
+
+    onTrapCollision(trap) {
+        switch (trap.name) {
+            case 'trap_falling_platform':
+                this.fallingPlatform(trap)
+                break;
+
+            case 'trap_spikes':
+                this.scene.player1.playerDies(trap) 
+                break;
+
+            default:
+                trap.body.destroy();
+        }
+    }
+
+
+    fallingPlatform(trap) {
+        if (trap.body.touching.up) {
+            this.scene.time.delayedCall(200, () => {
+                this.stopTween(trap)
+                this.stopParticels(trap)
+                this.stopAnimations(trap)
+            });
+            this.scene.time.delayedCall(400, () => {
+                trap.body.checkCollision.none = true;
+                trap.body.setAllowGravity(true);
+                trap.body.setImmovable(false);
+                trap.body.setVelocityY(250);
+            });
+            this.scene.time.delayedCall(5000, () => {
+                trap.destroy();
+            });
+        }
     }
 
 
@@ -21,7 +51,7 @@ class Trap_Service {
             trap.tween.stop();
             trap.tween.remove();
             trap.tween = null;
-        }else{}
+        } else { }
     }
 
 
@@ -40,32 +70,6 @@ class Trap_Service {
     }
 
 
-    onTrapCollision(trap) {
-        switch (trap.name) {
-            case 'trap_falling_platform':
-                this.fallingPlatform(trap)
-                break;
-
-            case 'fan':
-                //somthing
-                break;
-
-            default:
-                trap.body.destroy();
-        }
-    }
-
-
-    fallingPlatform(trap) {
-        this.scene.time.delayedCall(500, () => {
-            trap.body.setAllowGravity(true);
-            trap.body.setImmovable(false);
-            trap.body.setVelocityY(250);
-        });
-        this.scene.time.delayedCall(5000, () => {
-            trap.destroy();
-          });
-      
-    }
+   
 
 }

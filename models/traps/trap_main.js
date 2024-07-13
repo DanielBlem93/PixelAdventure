@@ -33,11 +33,15 @@ class Traps {
     }
 
     setTrapProperties(trap, tile, trapType) {
+        console.log(trap)
         trap.body.width = tile.properties.tileWidth
         trap.body.height = tile.properties.tileHeight
         trap.body.allowGravity = tile.properties.gravity
         trap.name = trapType
         trap.body.allowDrag = tile.properties.allowDrag
+        setTrapBodyCenter(trap, tile.properties.centerOffsetX, tile.properties.centerOffsetY)
+
+
     }
 
 
@@ -74,7 +78,6 @@ class Traps {
             case 'trap_falling_platform':
                 this.falling_platform = new Falling_platform_trap(this.scene)
                 this.falling_platform.addEffects(trap)
-                console.log('added trap effects')
                 break;
 
             default:

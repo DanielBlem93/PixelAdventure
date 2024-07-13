@@ -156,29 +156,28 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 326, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 325, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 326, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 325, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 326, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 325, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 329, 329, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":25,
          "id":7,
-         "locked":true,
          "name":"traps",
          "opacity":1,
          "type":"tilelayer",
@@ -2864,71 +2863,8 @@
          "tilewidth":32
         }, 
         {
-         "columns":1,
-         "firstgid":325,
-         "image":"..\/assets\/Traps\/Falling Platforms\/Off.png",
-         "imageheight":10,
-         "imagewidth":32,
-         "margin":0,
-         "name":"trap-fan",
-         "spacing":0,
-         "tilecount":1,
-         "tileheight":10,
-         "tiles":[
-                {
-                 "id":0,
-                 "properties":[
-                        {
-                         "name":"active",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"allowDrag",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"frameNumbers",
-                         "type":"int",
-                         "value":4
-                        }, 
-                        {
-                         "name":"gravity",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"hasContact",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"pushable",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"tileHeight",
-                         "type":"int",
-                         "value":10
-                        }, 
-                        {
-                         "name":"tileWidth",
-                         "type":"int",
-                         "value":32
-                        }, 
-                        {
-                         "name":"trap",
-                         "type":"string",
-                         "value":"trap_falling_platform"
-                        }]
-                }],
-         "tilewidth":32
-        }, 
-        {
          "columns":4,
-         "firstgid":326,
+         "firstgid":325,
          "image":"..\/assets\/Traps\/Falling Platforms\/On (32x10).png",
          "imageheight":10,
          "imagewidth":128,
@@ -2967,6 +2903,16 @@
                          "name":"allowDrag",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
                         }, 
                         {
                          "name":"frameNumbers",
@@ -3018,6 +2964,16 @@
                          "value":false
                         }, 
                         {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
@@ -3065,6 +3021,16 @@
                          "name":"allowDrag",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
                         }, 
                         {
                          "name":"frameNumbers",
@@ -3116,6 +3082,16 @@
                          "value":false
                         }, 
                         {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
                          "name":"frameNumbers",
                          "type":"int",
                          "value":4
@@ -3152,6 +3128,79 @@
                         }]
                 }],
          "tilewidth":32
+        }, 
+        {
+         "columns":1,
+         "firstgid":329,
+         "image":"..\/assets\/Traps\/Spikes\/spike.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "margin":0,
+         "name":"spikes",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":16,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":9
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":16
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_spikes"
+                        }]
+                }],
+         "tilewidth":16
         }],
  "tilewidth":16,
  "type":"map",
