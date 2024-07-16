@@ -29,8 +29,6 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.jumpAnimations(cursor)
             this.falling()
         }
-
-
     }
 
 
@@ -112,6 +110,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     playerDies(trap) {
         this.palyDeadAnimation()
         this.playerKnockBack()
+        this.scene.cameras.main.shake(60)
 
         this.scene.time.delayedCall(1500, () => {
             this.dead = false

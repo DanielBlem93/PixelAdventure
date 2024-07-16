@@ -45,6 +45,7 @@ class PreloadAssets {
     preloadTraps(){
         this.scene.load.spritesheet('trap_falling_platform', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
         this.scene.load.spritesheet('trap_spikes', 'assets/Traps/Spikes/spike.png', { frameWidth: 16, frameHeight: 16 });
+        this.scene.load.spritesheet('trap_trampoline', 'assets/Traps/Trampoline/Jump (28x28).png', { frameWidth: 28, frameHeight: 28 });
 
     }
 

@@ -38,11 +38,11 @@ class PixelAdventure extends Phaser.Scene {
 
   }
 
-  restart(){
+  restart() {
     this.scene.restart()
   }
 
-  
+
 
   addCollisions() {
 
@@ -54,7 +54,7 @@ class PixelAdventure extends Phaser.Scene {
   }
 
   handleTrapCollisions(player, trap) {
-    this.trapService.stopTrapEffects(trap)
+    this.trapService.stopTrapEffects(trap, player)
 
   }
 
@@ -65,9 +65,6 @@ class PixelAdventure extends Phaser.Scene {
       console.log('Item kollidiert');
     }
   }
-
-
-
 
 
 }

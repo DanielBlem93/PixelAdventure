@@ -5,6 +5,7 @@ class Falling_platform_trap extends Traps {
     constructor(scene) {
         super(scene)
         this.scene = scene;
+
     }
 
 

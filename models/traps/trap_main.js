@@ -4,6 +4,7 @@ class Traps {
     animationKeys
     particles
     falling_platform
+    trampoline
     constructor(scene) {
 
         this.scene = scene;
@@ -18,18 +19,32 @@ class Traps {
 
         const trapType = tile.properties.trap
         const frameNumbers = tile.properties.frameNumbers
-        const x = tile.getCenterX();
-        const y = tile.getCenterY();
+        const x =  this.getTilePosition(tile,'x');
+        const y =  this.getTilePosition(tile,'y');
+
         const trap = this.traps.create(x, y, trapType);
 
         if (trap) {
             this.setTrapProperties(trap, tile, trapType)
             this.createTrapsAnimation(trapType, frameNumbers)
             trap.setPushable(tile.properties.pushable)
+
         }
         this.scene.traps = this.traps
         console.log('added traps', this.traps)
 
+    }
+
+    getTilePosition(tile, axis) {
+        let position;
+        let offset = tile.properties[`positionOffset${axis.toUpperCase()}`];
+    
+        if (offset !== 0) {
+            position = tile[`getCenter${axis.toUpperCase()}`]() + offset;
+        } else {
+            position = tile[`getCenter${axis.toUpperCase()}`]();
+        }
+        return position;
     }
 
     setTrapProperties(trap, tile, trapType) {
@@ -78,6 +93,10 @@ class Traps {
             case 'trap_falling_platform':
                 this.falling_platform = new Falling_platform_trap(this.scene)
                 this.falling_platform.addEffects(trap)
+                break;
+            case 'trap_trampoline':
+                this.falling_platform = new Trampoline_Trap(this.scene, trap)
+
                 break;
 
             default:
