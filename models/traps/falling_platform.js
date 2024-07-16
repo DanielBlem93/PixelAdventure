@@ -12,6 +12,7 @@ class Falling_platform_trap extends Traps {
     addEffects(trap) {
         this.addUpDownMotion(trap)
         this.addParticles(trap)
+
     }
 
 
@@ -45,6 +46,7 @@ class Falling_platform_trap extends Traps {
             blendMode: 'ADD',
             gravityY: 500,
             frequency: 200,
+
    
         })
     }

@@ -21,7 +21,7 @@ class Trap_Service {
                 break;
 
             case 'trap_trampoline':
-            this.trampoline(trap,player)
+                this.trampoline(trap, player)
                 break;
 
             default:
@@ -34,7 +34,7 @@ class Trap_Service {
         if (trap.body.touching.up) {
             this.scene.time.delayedCall(200, () => {
                 this.stopTween(trap)
-                this.stopParticels(trap)
+                this.stopPlatformParticels(trap)
                 this.stopAnimations(trap)
             });
             this.scene.time.delayedCall(400, () => {
@@ -49,11 +49,6 @@ class Trap_Service {
         }
     }
 
-        trampoline(trap, player){
-            trap.anims.setRepeat(0)
-            trap.anims.restart()
-            player.setVelocityY(-800)
-        }
 
 
     stopTween(trap) {
@@ -65,7 +60,7 @@ class Trap_Service {
     }
 
 
-    stopParticels(trap) {
+    stopPlatformParticels(trap) {
         if (trap.particles) {
             trap.particles.destroy();
             trap.particles = null;
@@ -78,6 +73,23 @@ class Trap_Service {
             trap.anims.stop()
         }
     }
+
+    trampoline(trap, player) {
+        if (trap.body.touching.up) {
+            trap.anims.setRepeat(0)
+            trap.anims.restart()
+            player.setVelocityY(-500)
+            this.startTrampolineParticles(trap)
+        }
+    }
+
+    startTrampolineParticles(trap) {
+        if (trap.particles2 && trap.particles1) {
+            trap.particles2.explode(4);
+            trap.particles1.explode(4);
+        }
+    }
+
 
 
 
