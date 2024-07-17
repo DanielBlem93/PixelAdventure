@@ -15,22 +15,24 @@ class Level {
 
     createLevel(level) {
         const map = this.scene.make.tilemap({ key: level });
-        const tileset = map.addTilesetImage('Terrain', 'Terrain');
-        const Hintergrund2 = map.addTilesetImage('Hintergrund2', 'Hintergrund2');
-        const bellowLayer = map.createLayer('belowPlayer', Hintergrund2, 0, 0);
-        const worldLayer = map.createLayer('worldLayer', tileset, 0, 0);
-        const aboveLayer = map.createLayer('abovePlayer', tileset, 0, 0);
-        const trapsLayer = map.createLayer('traps', tileset, 0, 0);
-        const pickupsLayer = map.createLayer('pickups', tileset, 0, 0);
-;
-        this.createTraps(trapsLayer)
-        this.createItems(pickupsLayer)
-   
-        this.scene.worldLayer = worldLayer
-        this.scene.trapsLayer = trapsLayer
-        // this.addDebugColors(worldLayer)
-
-        console.log(this.scene)
+        
+  
+        const tilesetTerrain = map.addTilesetImage('Terrain', 'Terrain');
+        const tilesetChain = map.addTilesetImage('trap_chain_horz', 'trap_chain_horz');
+        const tilesetHintergrund2 = map.addTilesetImage('Hintergrund2', 'Hintergrund2');
+       
+        const bellowLayer = map.createLayer('belowPlayer', tilesetHintergrund2, 0, 0);
+        const worldLayer = map.createLayer('worldLayer', [tilesetTerrain, tilesetChain], 0, 0); 
+        const aboveLayer = map.createLayer('abovePlayer', tilesetTerrain, 0, 0);
+        const trapsLayer = map.createLayer('traps', tilesetTerrain, 0, 0);
+        const pickupsLayer = map.createLayer('pickups', tilesetTerrain, 0, 0);
+    
+        this.createTraps(trapsLayer);
+        this.createItems(pickupsLayer);
+       
+        this.scene.worldLayer = worldLayer;
+        this.scene.trapsLayer = trapsLayer;
+        // this.addDebugColors(worldLayer);
     }
 
     createTraps(trapsLayer) {

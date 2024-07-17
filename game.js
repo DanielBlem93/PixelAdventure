@@ -13,6 +13,7 @@ class PixelAdventure extends Phaser.Scene {
     this.traps = null
     this.trapService = new Trap_Service(this)
 
+
   }
 
   cursors
@@ -28,13 +29,12 @@ class PixelAdventure extends Phaser.Scene {
     this.level = new Level(this, 'level1');
     this.level.create();
 
-    this.player1 = new Player1(this, 200, 200)
+    this.player1 = new Player1(this, 250,150)
     this.addCollisions()
   }
 
   update() {
     this.player1.update(this.cursors);
-
 
   }
 
@@ -54,7 +54,7 @@ class PixelAdventure extends Phaser.Scene {
   }
 
   handleTrapCollisions(player, trap) {
-    this.trapService.stopTrapEffects(trap, player)
+    this.trapService.onTrapCollision(trap, player)
 
   }
 
@@ -93,7 +93,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      // debug: true,
       gravity: {
         y: 600
       }

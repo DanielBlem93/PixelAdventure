@@ -1,14 +1,17 @@
 class Trap_Service {
     scene
+    currentPlatform
 
     constructor(scene) {
         this.scene = scene;
+        this.currentPlatform = null;
     }
 
+    setTrapBodyCenter(trap, centerX, centerY) {
 
-    stopTrapEffects(trap, player) {
-        this.onTrapCollision(trap, player)
+        trap.body.setOffset(centerX, centerY);
     }
+
 
     onTrapCollision(trap, player) {
         switch (trap.name) {
@@ -24,8 +27,12 @@ class Trap_Service {
                 this.trampoline(trap, player)
                 break;
 
+            case 'trap_moving_platform_auto':
+                this.movingPlatform(trap, player)
+                break;
+
             default:
-                trap.body.destroy();
+
         }
     }
 
@@ -40,7 +47,6 @@ class Trap_Service {
             this.scene.time.delayedCall(400, () => {
                 trap.body.checkCollision.none = true;
                 trap.body.setAllowGravity(true);
-                trap.body.setImmovable(false);
                 trap.body.setVelocityY(250);
             });
             this.scene.time.delayedCall(5000, () => {
@@ -91,6 +97,9 @@ class Trap_Service {
     }
 
 
+    movingPlatform(platform, player) {
+        this.currentPlatform = platform   // eventuel löschen
+    }
 
 
 

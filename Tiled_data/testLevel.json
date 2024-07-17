@@ -52,7 +52,7 @@
             3221225495, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 14, 15, 0, 3221225497,
             3221225495, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225519, 27,
             3221225495, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 24,
-            47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 14, 15, 0, 0, 0, 0, 0, 89, 2684354653,
+            47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 346, 346, 346, 346, 346, 346, 0, 0, 89, 2684354653,
             2147483763, 91, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225585, 112,
             112, 113, 0, 0, 0, 0, 0, 0, 0, 0, 13, 14, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225585, 112,
             112, 113, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3221225585, 112,
@@ -163,11 +163,11 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 325, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 338, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 330, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 325, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -179,7 +179,7 @@
          "height":25,
          "id":7,
          "name":"traps",
-         "opacity":1,
+         "opacity":0.98,
          "type":"tilelayer",
          "visible":true,
          "width":25,
@@ -190,7 +190,7 @@
  "nextobjectid":3,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.10.2",
+ "tiledversion":"1.11.0",
  "tileheight":16,
  "tilesets":[
         {
@@ -2920,6 +2920,11 @@
                          "value":4
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -2928,6 +2933,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -2989,6 +2999,11 @@
                          "value":4
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -2997,6 +3012,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3058,6 +3078,11 @@
                          "value":4
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3066,6 +3091,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3127,6 +3157,11 @@
                          "value":4
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3135,6 +3170,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3210,6 +3250,11 @@
                          "value":1
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3218,6 +3263,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3293,6 +3343,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3301,6 +3356,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3362,6 +3422,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3370,6 +3435,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3431,6 +3501,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3439,6 +3514,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3500,6 +3580,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3508,6 +3593,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3569,6 +3659,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3577,6 +3672,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3638,6 +3738,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3646,6 +3751,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3707,6 +3817,11 @@
                          "value":8
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3715,6 +3830,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3776,6 +3896,11 @@
                          "value":9
                         }, 
                         {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
                          "name":"gravity",
                          "type":"bool",
                          "value":false
@@ -3784,6 +3909,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"positionOffsetX",
@@ -3817,6 +3947,1545 @@
                         }]
                 }],
          "tilewidth":28
+        }, 
+        {
+         "columns":8,
+         "firstgid":338,
+         "image":"..\/assets\/Traps\/Platforms\/Grey On (32x8).png",
+         "imageheight":8,
+         "imagewidth":256,
+         "margin":0,
+         "name":"trap_moving_platform_auto",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":8,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":4,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":6,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":7,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":336
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":240
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":1,
+         "firstgid":346,
+         "image":"..\/assets\/Traps\/Platforms\/chain_horz_16 x16.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "margin":0,
+         "name":"trap_chain_horz",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":1,
+         "firstgid":347,
+         "image":"..\/assets\/Traps\/Platforms\/chain_vert_16 x16.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "margin":0,
+         "name":"blocker",
+         "spacing":0,
+         "tilecount":1,
+         "tileheight":16,
+         "tilewidth":16
+        }, 
+        {
+         "columns":5,
+         "fillmode":"preserve-aspect-fit",
+         "firstgid":348,
+         "image":"qrc:\/automap-tiles.svg",
+         "imageheight":32,
+         "imagewidth":160,
+         "margin":0,
+         "name":"AutoMap Rules",
+         "spacing":0,
+         "tilecount":5,
+         "tileheight":32,
+         "tilerendersize":"grid",
+         "tiles":[
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"MatchType",
+                         "type":"string",
+                         "value":"Empty"
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "properties":[
+                        {
+                         "name":"MatchType",
+                         "type":"string",
+                         "value":"Ignore"
+                        }]
+                }, 
+                {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"MatchType",
+                         "type":"string",
+                         "value":"NonEmpty"
+                        }]
+                }, 
+                {
+                 "id":4,
+                 "properties":[
+                        {
+                         "name":"MatchType",
+                         "type":"string",
+                         "value":"Other"
+                        }]
+                }, 
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"MatchType",
+                         "type":"string",
+                         "value":"Negate"
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":8,
+         "firstgid":353,
+         "image":"..\/assets\/Traps\/Platforms\/Grey On (32x8).png",
+         "imageheight":8,
+         "imagewidth":256,
+         "margin":0,
+         "name":"trap_moving_plaftorm_auto",
+         "spacing":0,
+         "tilecount":8,
+         "tileheight":8,
+         "tiles":[
+                {
+                 "id":0,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":2,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":3,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":4,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":5,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":6,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }, 
+                {
+                 "id":7,
+                 "properties":[
+                        {
+                         "name":"active",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"allowDrag",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"centerOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"centerOffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"endPoint",
+                         "type":"int",
+                         "value":350
+                        }, 
+                        {
+                         "name":"frameNumbers",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"friction",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"gravity",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"immovable",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"positionOffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"positionOffsetY",
+                         "type":"int",
+                         "value":3
+                        }, 
+                        {
+                         "name":"pushable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"startPoint",
+                         "type":"int",
+                         "value":200
+                        }, 
+                        {
+                         "name":"tileHeight",
+                         "type":"int",
+                         "value":8
+                        }, 
+                        {
+                         "name":"tileWidth",
+                         "type":"int",
+                         "value":32
+                        }, 
+                        {
+                         "name":"trap",
+                         "type":"string",
+                         "value":"trap_moving_platform_auto"
+                        }]
+                }],
+         "tilewidth":32
         }],
  "tilewidth":16,
  "type":"map",

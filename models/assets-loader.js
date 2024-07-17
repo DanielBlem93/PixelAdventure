@@ -30,6 +30,7 @@ class PreloadAssets {
     preloadTerrainAssets() {
         // Terrain assets 
         this.scene.load.image('Terrain', 'assets/terrain/terrain.png')
+        this.scene.load.image('trap_chain_horz', 'assets/Traps/Platforms/chain_horz_16 x16.png')
         this.scene.load.image('Hintergrund2', 'assets/Background/Brown.png')
         this.scene.load.tilemapTiledJSON('level1', 'Tiled_data/testLevel.json')
     }
@@ -46,6 +47,7 @@ class PreloadAssets {
         this.scene.load.spritesheet('trap_falling_platform', 'assets/Traps/Falling Platforms/On (32x10).png', { frameWidth: 32, frameHeight: 10 });
         this.scene.load.spritesheet('trap_spikes', 'assets/Traps/Spikes/spike.png', { frameWidth: 16, frameHeight: 16 });
         this.scene.load.spritesheet('trap_trampoline', 'assets/Traps/Trampoline/Jump (28x28).png', { frameWidth: 28, frameHeight: 28 });
+        this.scene.load.spritesheet('trap_moving_platform_auto', 'assets/Traps/Platforms/Grey On (32x8).png', { frameWidth: 32, frameHeight: 8 });
 
     }
 

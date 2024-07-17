@@ -1,14 +1,18 @@
 class Traps {
     scene
+    trapService
     traps
+    trap_settings = []
     animationKeys
     particles
     falling_platform
+    movingPlatformAuto
     trampoline
     constructor(scene) {
 
         this.scene = scene;
         this.traps = scene.physics.add.group();
+        this.trapService = this.scene.trapService
         this.trapAnimationKeys = []
 
     }
@@ -26,9 +30,6 @@ class Traps {
         if (trap) {
             this.setTrapProperties(trap, tile, trapType)
             this.createTrapsAnimation(trapType, frameNumbers)
-            trap.setPushable(tile.properties.pushable)
-            // console.log('current trap', trap)
-            
         }
         this.scene.traps = this.traps
     }
@@ -46,16 +47,45 @@ class Traps {
     }
 
     setTrapProperties(trap, tile, trapType) {
-        console.log(trap)
         trap.body.width = tile.properties.tileWidth
         trap.body.height = tile.properties.tileHeight
         trap.body.allowGravity = tile.properties.gravity
         trap.name = trapType
         trap.body.allowDrag = tile.properties.allowDrag
-        setTrapBodyCenter(trap, tile.properties.centerOffsetX, tile.properties.centerOffsetY)
-
+        trap.setPushable(tile.properties.pushable)
+        trap.setImmovable(tile.properties.immovable)
+        trap.setFriction(tile.properties.friction)
+        this.trapService.setTrapBodyCenter(trap, tile.properties.centerOffsetX, tile.properties.centerOffsetY)
+        this.setPropertieJSON(trap, tile.properties, tile);
 
     }
+
+    setPropertieJSON(trap, properties, tile) {
+        const trapJSON = {
+            trapType: trap.name,
+            x: trap.x,
+            y: trap.y,
+            width: trap.body.width,
+            height: trap.body.height,
+            allowGravity: trap.body.allowGravity,
+            allowDrag: trap.body.allowDrag,
+            centerOffsetX: properties.centerOffsetX,
+            centerOffsetY: properties.centerOffsetY,
+            tileWidth: properties.tileWidth,
+            tileHeight: properties.tileHeight,
+            pushable: properties.pushable,
+            frameNumbers: properties.frameNumbers,
+            startPoint: properties.startPoint,
+            endPoint: properties.endPoint,
+            immovable: properties.immovable,
+            trap: trap,
+            tile: tile,
+        };
+
+        this.trap_settings.push(trapJSON);
+        console.log('Trap settings:', this.trap_settings);
+    }
+
 
 
 
@@ -92,9 +122,16 @@ class Traps {
                 this.falling_platform = new Falling_platform_trap(this.scene)
                 this.falling_platform.addEffects(trap)
                 break;
+
             case 'trap_trampoline':
-                this.trampoline= new Trampoline_Trap(this.scene, trap)
+                this.trampoline = new Trampoline_Trap(this.scene, trap)
                 this.trampoline.addEffects(trap)
+                break
+
+            case 'trap_moving_platform_auto':
+                let config = this.getTrap(trap)
+                this.movingPlatformAuto = new Moving_Platform(this.scene, trap, config)
+                this.movingPlatformAuto.putTrapOnStartPosition(trap, config, 5000)
 
                 break;
 
@@ -104,6 +141,14 @@ class Traps {
     }
 
 
+    getTrap(trap) {
+        for (const t of this.trap_settings) {
+            if (t.trap === trap) {
+                return t; 
+            }
+        }
+        return null;
+    }
 
 
 

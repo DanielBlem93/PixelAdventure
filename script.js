@@ -43,12 +43,3 @@ function setCollisionDimensions(instance, width, height) {
 
 }
 
-function setTrapBodyCenter(trap, centerX, centerY) {
-
-    // Berechne den Offset, um den zentralen Punkt zu setzen
-    let offsetX = centerX - trap.width;
-    let offsetY = centerY - trap.height;
-
-    // Setze den Offset des Kollisionsbereichs
-    trap.body.setOffset(centerX, centerY);
-}
