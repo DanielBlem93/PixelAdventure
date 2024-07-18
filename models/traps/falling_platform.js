@@ -12,7 +12,9 @@ class Falling_platform_trap extends Traps {
     addEffects(trap) {
         this.addUpDownMotion(trap)
         this.addParticles(trap)
-
+        trap.body.checkCollision.down = false
+        trap.body.checkCollision.left = false
+        trap.body.checkCollision.right = false
     }
 
 
@@ -33,7 +35,7 @@ class Falling_platform_trap extends Traps {
     addParticles(trap) {
         let trapX = trap.body.center.x;
         let trapY = trap.body.center.y + 10;
-        trap.particles = this.scene.add.particles(trapX, trapY +2, 'dust', {
+        trap.particles = this.scene.add.particles(trapX, trapY + 2, 'dust', {
             accelerationX: 0,
             accelerationY: 1000,
             alpha: { start: 0.2, end: 0.0, ease: 'Linear' },
@@ -47,7 +49,7 @@ class Falling_platform_trap extends Traps {
             gravityY: 500,
             frequency: 200,
 
-   
+
         })
     }
 

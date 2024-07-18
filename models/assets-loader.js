@@ -25,6 +25,7 @@ class PreloadAssets {
         this.scene.load.spritesheet('player-idle', 'assets/Main Characters/Virtual Guy/Idle (32x32).png', { frameWidth: 32, frameHeight: 32 });
         this.scene.load.spritesheet('player-doubleJump', 'assets/Main Characters/Virtual Guy/Double Jump (32x32).png', { frameWidth: 32, frameHeight: 32 });
         this.scene.load.spritesheet('player-hit', 'assets/Main Characters/Virtual Guy/Hit (32x32).png', { frameWidth: 32, frameHeight: 32 });
+        this.scene.load.spritesheet('player-wallJump', 'assets/Main Characters/Virtual Guy/Wall Jump (32x32).png', { frameWidth: 32, frameHeight: 32 });
     }
 
     preloadTerrainAssets() {

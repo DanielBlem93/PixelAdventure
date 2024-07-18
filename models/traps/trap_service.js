@@ -28,7 +28,11 @@ class Trap_Service {
                 break;
 
             case 'trap_moving_platform_auto':
-                this.movingPlatform(trap, player)
+                if (player.body.blocked.left || player.body.blocked.right) {
+                    // Ignoriere die Kollisionen für die linken und rechten Seiten
+                    return false;
+                } else
+                    this.movingPlatform(trap, player)
                 break;
 
             default:
@@ -99,6 +103,7 @@ class Trap_Service {
 
     movingPlatform(platform, player) {
         this.currentPlatform = platform   // eventuel löschen
+        player.setGravityY(7000)
     }
 
 

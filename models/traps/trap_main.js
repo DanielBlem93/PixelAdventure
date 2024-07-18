@@ -78,6 +78,8 @@ class Traps {
             startPoint: properties.startPoint,
             endPoint: properties.endPoint,
             immovable: properties.immovable,
+            duration: properties.duration,
+            horz:properties.horz,
             trap: trap,
             tile: tile,
         };
@@ -131,7 +133,7 @@ class Traps {
             case 'trap_moving_platform_auto':
                 let config = this.getTrap(trap)
                 this.movingPlatformAuto = new Moving_Platform(this.scene, trap, config)
-                this.movingPlatformAuto.putTrapOnStartPosition(trap, config, 5000)
+                this.movingPlatformAuto.putTrapOnStartPosition(trap, config, config.duration)
 
                 break;
 

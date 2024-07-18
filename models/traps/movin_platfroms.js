@@ -16,9 +16,11 @@ class Moving_Platform extends Traps {
         this.platform = platform
     }
 
-    putTrapOnStartPosition(platform, config,duration) {
+    putTrapOnStartPosition(platform, config, duration) {
         if (config) {
             platform.body.checkCollision.down = false
+            platform.body.checkCollision.left = false
+            platform.body.checkCollision.right = false
             platform.body.x = config.startPoint
             this.addMovement(platform, config, duration)
         }
@@ -28,14 +30,21 @@ class Moving_Platform extends Traps {
     addMovement(platform, config, duration) {
 
         let velocity = (config.endPoint - config.startPoint) / (duration / 1000)
-        platform.setVelocityX(velocity)
 
+        if (config.horz) {
+            this.movePlatformHorz(platform, config, duration, velocity)
+        } else {
+            this.movePlatformVert(platform, config, duration)
+        }
+    }
+
+    movePlatformHorz(platform, config, duration, velocity) {
+        platform.setVelocityX(velocity)
         this.platform.tween = this.scene.tweens.add({
             targets: platform,
             loop: -1,
             x: { from: config.startPoint, to: config.endPoint },
             duration: duration,
-
             yoyo: true,
             ease: 'linear',
             onLoop: function () {
@@ -49,10 +58,22 @@ class Moving_Platform extends Traps {
         });
     }
 
-   
-    
 
-   
-
+    movePlatformVert(platform, config, duration) {
+        this.platform.tween = this.scene.tweens.add({
+            targets: platform,
+            loop: -1,
+            y: { from: config.startPoint, to: config.endPoint },
+            duration: duration,
+            yoyo: true,
+            ease: 'linear',
+            onLoop: function () {
+                platform.anims.play('trap_moving_platform_auto-animation')
+            },
+            onYoyo: function () {
+                platform.anims.playReverse('trap_moving_platform_auto-animation')
+            }
+        });
+    }
 
 }

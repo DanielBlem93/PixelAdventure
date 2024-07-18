@@ -29,12 +29,13 @@ class PixelAdventure extends Phaser.Scene {
     this.level = new Level(this, 'level1');
     this.level.create();
 
-    this.player1 = new Player1(this, 250,150)
+    this.player1 = new Player1(this, 30,150)
     this.addCollisions()
   }
 
   update() {
     this.player1.update(this.cursors);
+    
 
   }
 
@@ -93,7 +94,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      // debug: true,
+      debug: true,
       gravity: {
         y: 600
       }

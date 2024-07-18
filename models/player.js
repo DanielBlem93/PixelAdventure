@@ -4,11 +4,22 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     particle
     jumped = false
     canDoubleJump = false;
+    wallJump = false
     doubleJumpAnimationState = true
-    collisionWidth = 20
-    collisionHeight = 30
+    collisionWidth = 12
+    collisionHeight = 18
+    offsetX = 10
+    offsetY = 12
     jumpcounter = 0
     dead = false
+    onWall = false
+    offWall = true
+    lockedKeyLeft = false
+    lockedKeyRight = false
+    left = false
+    right = false
+    timer
+    timerActive = false
     constructor(scene, x, y) {
         super(scene, x, y);
         scene.add.existing(this);
@@ -16,27 +27,64 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         this.setCollideWorldBounds(true);
         this.setGravityY(600);
         this.createAnimations(scene);
-        setCollisionDimensions(this, this.collisionWidth, this.collisionHeight)
+        this.setCollisionDimensions(this.collisionWidth, this.collisionHeight, this.offsetX, this.offsetY)
         this.remove
         console.log(this)
     }
 
-
+    setCollisionDimensions(width, height, offsetX, offsetY) {
+        this.body.setSize(width, height, true)
+        this.body.setOffset(offsetX, offsetY);
+    }
 
     update(cursor) {
-        if (!this.dead) {
+
+        this.checkWallCollision()
+
+
+        if (!this.dead && !this.onWall) {
             this.WalkAndIdle(cursor)
             this.jumpAnimations(cursor)
             this.falling()
+
+        } else if (!this.dead && this.onWall) {
+            this.setVelocityY(-20)
+            this.anims.play('wallJump', true)
+            this.jumpAnimations(cursor)
+        }
+        // this.logVar()
+    }
+
+    checkWallCollision() {
+        const { body } = this;
+
+        if ((body.blocked.left || body.blocked.right) && this.jumped && !body.blocked.down) {
+            this.onWall = true;
+            this.handleWallCollision(body.blocked.left, body.blocked.right);
         }
     }
+
+    handleWallCollision(blockedLeft, blockedRight) {
+        if (blockedLeft) {
+            this.left = true;
+            this.lockedKeyLeft = true;
+            this.setFlipX(true);
+        }
+
+        if (blockedRight) {
+            this.right = true;
+            this.lockedKeyRight = true;
+            this.setFlipX(false);
+        }
+    }
+
 
 
     WalkAndIdle(cursor) {
         let touchinGround = this.body.blocked.down
         let noKeyPressd = !cursor.left.isDown && !cursor.right.isDown && !cursor.up.isDown
 
-        if (cursor.left.isDown)
+        if (cursor.left.isDown && !this.lockedKeyLeft)
             this.movePlayer(touchinGround, true, -130)
 
         else if (cursor.right.isDown)
@@ -45,6 +93,8 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         else if (noKeyPressd)
             this.idleAnimation(touchinGround)
     }
+
+
 
 
     movePlayer(touchinGround, flipx, speed) {
@@ -75,16 +125,68 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         if (touchinGround && !isJumpJustDown) {
             this.resetJump()
         }
-        if (onAir && this.jumpcounter <= 1) {
+        if (onAir && this.jumpcounter <= 1 && !this.onWall) {
             this.anims.play("jump", true) //first jump animation
         }
+        if (this.onWall) {
+            this.jumpFromWall()
+
+        }
+    }
+
+    jumpFromWall() {
+        this.scene.input.keyboard.on('keydown', (event) => {
+            if (event.key === 'ArrowUp' && this.onWall && this.left) {
+                this.jumpFromWallLeft()
+            } else if (event.key === 'ArrowUp' && this.onWall && this.right) {
+                this.jumpFromWallRight()
+            } else if (event.key === 'ArrowDown' && this.onWall) {
+                this.fallFromWall()
+            }
+        });
+    }
+
+
+    jumpFromWallLeft() {
+        this.resetJump()
+        this.setVelocityX(130);
+        this.setVelocityY(-380)
+        this.anims.play("jump", true)
+        this.onWall = false
+        this.left = false
+        setTimeout(() => {
+            this.lockedKeyLeft = false
+        }, 300);
+    }
+
+    jumpFromWallRight() {
+        this.resetJump()
+        this.setVelocityX(-130);
+        this.setVelocityY(-380)
+        this.anims.play("jump", true)
+        this.onWall = false
+        this.right = false
+        setTimeout(() => {
+            this.lockedKeyRight = false
+        }, 300);
+    }
+
+    fallFromWall() {
+        this.onWall = false
+        this.left = false
+        this.right = false
+        setTimeout(() => {
+            this.lockedKeyRight = false
+            this.lockedKeyLeft = false
+        }, 300);
     }
 
 
     jump() {
+        this.setGravityY(600)
         this.anims.play('double-jump')
         this.on('animationcomplete-double-jump', function () {
-            this.anims.play("fall", true);
+            this.anims.play("fall", false);
         })
         this.setVelocityY(-380)
         this.jumpcounter++
@@ -96,15 +198,20 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     }
 
 
-
     falling() {
-        if (this.body.velocity.y > 0) {
+        if (this.body.velocity.y > 0 && !this.onWall) {
+            this.setGravityY(600)
+        }
+
+        if (this.body.velocity.y > 0 && !this.jumped && !this.onWall) {
             this.anims.play("fall", true);
+
             if (this.jumpcounter < 1) {
                 this.jumpcounter++
             }
         }
     }
+
 
 
     playerDies(trap) {
@@ -149,6 +256,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         this.walkAndIdleAnimation(scene)
         this.jumpAndFallAnimation(scene)
         this.deadAnimation(scene)
+        this.holdOnWallAnimation(scene)
     }
 
 
@@ -184,7 +292,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             key: "fall",
             frames: this.anims.generateFrameNumbers("player-fall", { start: 0, end: 0 }),
             frameRate: 20,
-            repeat: -1,
+            repeat: 0,
         });
         this.anims.create({
             key: "double-jump",
@@ -201,6 +309,15 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             frames: this.anims.generateFrameNumbers("player-hit", { start: 0, end: 6 }),
             frameRate: 20,
             repeat: 0,
+        });
+    }
+
+    holdOnWallAnimation(scene) {
+        this.anims.create({
+            key: "wallJump",
+            frames: this.anims.generateFrameNumbers("player-wallJump", { start: 0, end: 4 }),
+            frameRate: 20,
+            repeat: -1,
         });
     }
 

@@ -67,7 +67,6 @@
             200, 1610612740, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 27, 200],
          "height":25,
          "id":4,
-         "locked":true,
          "name":"worldLayer",
          "opacity":1,
          "type":"tilelayer",
@@ -171,13 +170,14 @@
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 325, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 353, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 329, 329, 0, 0, 0, 330, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":25,
          "id":7,
+         "locked":true,
          "name":"traps",
          "opacity":0.98,
          "type":"tilelayer",
@@ -3237,7 +3237,7 @@
                         {
                          "name":"centerOffsetX",
                          "type":"int",
-                         "value":0
+                         "value":2
                         }, 
                         {
                          "name":"centerOffsetY",
@@ -3292,7 +3292,7 @@
                         {
                          "name":"tileWidth",
                          "type":"int",
-                         "value":16
+                         "value":12
                         }, 
                         {
                          "name":"trap",
@@ -3984,6 +3984,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4007,6 +4012,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4073,6 +4083,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4096,6 +4111,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4162,6 +4182,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4185,6 +4210,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4251,6 +4281,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4274,6 +4309,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4340,6 +4380,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4363,6 +4408,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4429,6 +4479,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4452,6 +4507,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4518,6 +4578,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4541,6 +4606,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4607,6 +4677,11 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":5000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
                          "value":336
@@ -4630,6 +4705,11 @@
                          "name":"hasContact",
                          "type":"bool",
                          "value":false
+                        }, 
+                        {
+                         "name":"horz",
+                         "type":"bool",
+                         "value":true
                         }, 
                         {
                          "name":"immovable",
@@ -4797,9 +4877,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -4818,6 +4903,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -4844,7 +4934,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -4886,9 +4976,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -4907,6 +5002,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -4933,7 +5033,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -4975,9 +5075,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -4996,6 +5101,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5022,7 +5132,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -5064,9 +5174,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -5085,6 +5200,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5111,7 +5231,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -5153,9 +5273,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -5174,6 +5299,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5200,7 +5330,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -5242,9 +5372,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -5263,6 +5398,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5289,7 +5429,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -5331,9 +5471,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -5352,6 +5497,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5378,7 +5528,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
@@ -5420,9 +5570,14 @@
                          "value":0
                         }, 
                         {
+                         "name":"duration",
+                         "type":"int",
+                         "value":2000
+                        }, 
+                        {
                          "name":"endPoint",
                          "type":"int",
-                         "value":350
+                         "value":240
                         }, 
                         {
                          "name":"frameNumbers",
@@ -5441,6 +5596,11 @@
                         }, 
                         {
                          "name":"hasContact",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"horz",
                          "type":"bool",
                          "value":false
                         }, 
@@ -5467,7 +5627,7 @@
                         {
                          "name":"startPoint",
                          "type":"int",
-                         "value":200
+                         "value":330
                         }, 
                         {
                          "name":"tileHeight",
