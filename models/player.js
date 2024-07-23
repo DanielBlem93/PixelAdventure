@@ -20,6 +20,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     right = false
     timer
     timerActive = false
+    hangDelay = true
     constructor(scene, x, y) {
         super(scene, x, y);
         scene.add.existing(this);
@@ -47,18 +48,17 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.jumpAnimations(cursor)
             this.falling()
 
-        } else if (!this.dead && this.onWall) {
+        } else if (!this.dead && this.onWall && !this.hangDelay) {
             this.setVelocityY(-20)
             this.anims.play('wallJump', true)
             this.jumpAnimations(cursor)
         }
-        // this.logVar()
     }
 
     checkWallCollision() {
         const { body } = this;
 
-        if ((body.blocked.left || body.blocked.right) && this.jumped && !body.blocked.down) {
+        if ((body.blocked.left || body.blocked.right) && this.jumped && !body.blocked.down && !this.hangDelay) {
             this.onWall = true;
             this.handleWallCollision(body.blocked.left, body.blocked.right);
         }
@@ -87,7 +87,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
         if (cursor.left.isDown && !this.lockedKeyLeft)
             this.movePlayer(touchinGround, true, -130)
 
-        else if (cursor.right.isDown)
+        else if (cursor.right.isDown && !this.lockedKeyRight)
             this.movePlayer(touchinGround, false, 130)
 
         else if (noKeyPressd)
@@ -120,7 +120,9 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
 
         // jumps when pressing up
         if (isJumpJustDown && (touchinGround || this.jumpcounter < 2)) {
+            this.hangDelay = true
             this.jump()
+       
         }
         if (touchinGround && !isJumpJustDown) {
             this.resetJump()
@@ -195,12 +197,15 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
     resetJump() {
         this.jumpcounter = 0
         this.jumped = false
+        this.hangDelay = false
     }
 
 
     falling() {
         if (this.body.velocity.y > 0 && !this.onWall) {
             this.setGravityY(600)
+           if(this.body.velocity.y >100)
+            this.hangDelay = false
         }
 
         if (this.body.velocity.y > 0 && !this.jumped && !this.onWall) {

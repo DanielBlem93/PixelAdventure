@@ -33,7 +33,8 @@ class PreloadAssets {
         this.scene.load.image('Terrain', 'assets/terrain/terrain.png')
         this.scene.load.image('trap_chain_horz', 'assets/Traps/Platforms/chain_horz_16 x16.png')
         this.scene.load.image('Hintergrund2', 'assets/Background/Brown.png')
-        this.scene.load.tilemapTiledJSON('level1', 'Tiled_data/testLevel.json')
+        this.scene.load.tilemapTiledJSON('debug_level', 'Tiled_data/testLevel.json')
+        this.scene.load.tilemapTiledJSON('menu', 'Tiled_data/PixVenture.json')
     }
 
     preloadItems() {

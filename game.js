@@ -7,11 +7,13 @@ class PixelAdventure extends Phaser.Scene {
   traps
   trapService
   scene
+  currentLevel
   constructor() {
     super()
     this.assetsLoader = new PreloadAssets(this)
     this.traps = null
     this.trapService = new Trap_Service(this)
+    this.currentLevel = 'debug_level'
 
 
   }
@@ -22,20 +24,22 @@ class PixelAdventure extends Phaser.Scene {
   }
 
   create() {
-
+    this.level = new Level(this, this.currentLevel);
     this.cursors = this.input.keyboard.createCursorKeys()
 
-
-    this.level = new Level(this, 'level1');
-    this.level.create();
-
-    this.player1 = new Player1(this, 30,150)
+    this.player1 = new Player1(this, 50, 150)
     this.addCollisions()
+    this.cameras.main.centerOn(400, 300);
+    this.cameras.main.setBounds(0, 0, 800, 600);
+    this.cameras.main.setZoom(1);
+    this.cameras.main.startFollow(this.player1);
   }
+
+
 
   update() {
     this.player1.update(this.cursors);
-    
+
 
   }
 
@@ -63,7 +67,8 @@ class PixelAdventure extends Phaser.Scene {
   handleItemCollisions(player, item) {
     if (item && item.active) {
       item.destroy();
-      console.log('Item kollidiert');
+      // this.currentLevel = 'menu'
+      // this.scene.restart()
     }
   }
 
@@ -72,8 +77,7 @@ class PixelAdventure extends Phaser.Scene {
 
 const config = {
   type: Phaser.AUTO,
-  width: 500,
-  height: 400,
+
   // backgroundColor: 0x999999,
   parent: 'thegame',
   scale: {
@@ -81,13 +85,13 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     resizeInterval: 500,
-    // width:
-    // height:
+    width: 800,
+    height: 600,
     //  zoom:5,
     // parent:
     expandParent: true,
-    min: { width: 300, height: 240 },
-    max: { width: 1024, height: 800 },
+    min: { width: 320, height: 480 },
+    max: { width: 800, height: 600 },
     autoRound: false,
   },
 
