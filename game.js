@@ -31,7 +31,7 @@ class PixelAdventure extends Phaser.Scene {
     this.addCollisions()
     this.cameras.main.centerOn(400, 300);
     this.cameras.main.setBounds(0, 0, 800, 600);
-    this.cameras.main.setZoom(1);
+    this.cameras.main.setZoom(2);
     this.cameras.main.startFollow(this.player1);
   }
 

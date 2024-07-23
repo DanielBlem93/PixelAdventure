@@ -10,19 +10,14 @@ class Level {
     map
     constructor(scene, level) {
         this.scene = scene;
-        this.tiles = [
-            'Terrain', 'trap_chain_horz', 'Hintergrund2'
-        ]
+        this.tiles = DATA.tiles
         this.createLevel(this.scene.currentLevel)
 
     }
 
-    create() {
-
-        this.createLevel(this.currentLevel)
+    getAssets(){
 
     }
-
 
 
     createLevel(level) {

@@ -208,7 +208,7 @@ class Player1 extends Phaser.Physics.Arcade.Sprite {
             this.hangDelay = false
         }
 
-        if (this.body.velocity.y > 0 && !this.jumped && !this.onWall) {
+        if (this.body.velocity.y > 0 && this.jumped && !this.onWall) {
             this.anims.play("fall", true);
 
             if (this.jumpcounter < 1) {

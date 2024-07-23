@@ -11,6 +11,7 @@ class PreloadAssets {
         this.preloadTerrainAssets()
         this.preloadItems()
         this.preloadTraps()
+        this.preloadBackgrounds()
         //particles
         this.scene.load.image('dust', 'assets/Other/Dust Particle.png')
     }
@@ -32,9 +33,18 @@ class PreloadAssets {
         // Terrain assets 
         this.scene.load.image('Terrain', 'assets/terrain/terrain.png')
         this.scene.load.image('trap_chain_horz', 'assets/Traps/Platforms/chain_horz_16 x16.png')
-        this.scene.load.image('Hintergrund2', 'assets/Background/Brown.png')
+        this.scene.load.image('background_blue', 'assets/Background/Blue.png')
         this.scene.load.tilemapTiledJSON('debug_level', 'Tiled_data/testLevel.json')
         this.scene.load.tilemapTiledJSON('menu', 'Tiled_data/PixVenture.json')
+    }
+
+
+    preloadBackgrounds(){
+        const imgTypes = ['Blue', 'Brwon', 'Gray', 'Green','Pink','Purple','Yellow'];        
+        imgTypes.forEach(imgType => {
+            this.scene.load.image(`background_${imgType}`, `assets/Background/${imgType}.png`);
+        });
+
     }
 
     preloadItems() {
