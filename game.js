@@ -4,6 +4,7 @@ class PixelAdventure extends Phaser.Scene {
   player1
   level
   particles
+  checkpoints
   traps
   trapService
   scene
@@ -50,7 +51,6 @@ class PixelAdventure extends Phaser.Scene {
 
 
   addCollisions() {
-
     this.worldLayer.setCollisionByProperty({ collides: true })
     this.physics.add.collider(this.player1, this.worldLayer)
     this.physics.add.collider(this.player1, this.traps, this.handleTrapCollisions, null, this)
@@ -65,10 +65,14 @@ class PixelAdventure extends Phaser.Scene {
 
 
   handleItemCollisions(player, item) {
-    if (item && item.active) {
+    if (item && item.active && item.name !== 'checkpoint_start') {
       item.destroy();
-      // this.currentLevel = 'menu'
-      // this.scene.restart()
+      console.log(item)
+
+    } else if (item.name === 'checkpoint_start') {
+      this.currentLevel = 'menu'
+      this.children.removeAll();
+      this.scene.restart()
     }
   }
 

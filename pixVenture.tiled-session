@@ -1,0 +1,35 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Alle Dateien (*)",
+    "fileStates": {
+        "Tiled_data/TiledFiles/checkpoint_end.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tiled_data/TiledFiles/testLevel.tmx#apple": {
+            "scaleInEditor": 1
+        },
+        "Tiled_data/TiledFiles/testLevel.tmx#checkpoint_start": {
+            "scaleInEditor": 1
+        },
+        "Tiled_data/TiledFiles/testLevel.tmx#trap_fan": {
+            "scaleInEditor": 1
+        }
+    },
+    "frame.defaultDuration": 50,
+    "last.imagePath": "C:/Users/dblem/Desktop/GameDev/Phaser/projects/Pixel Adventure/assets/Items/Checkpoints/End",
+    "openFiles": [
+    ],
+    "project": "pixVenture.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Tiled_data/TiledFiles/checkpoint_end.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

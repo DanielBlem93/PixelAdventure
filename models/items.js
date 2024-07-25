@@ -18,15 +18,16 @@ class Items {
 
         let fruitType = tile.properties.kind;
         const x = tile.getCenterX();
-        const y = tile.getCenterY() - 16;
+        const y = tile.getCenterY() - 48;
         const pickup = this.items.create(x, y, fruitType);
 
         if (pickup) {
+            pickup.name = tile.properties.kind
             pickup.body.allowGravity = false;
-            setCollisionDimensions(pickup, this.collisionWidth, this.collisionHeight)
+            // setCollisionDimensions(pickup, this.collisionWidth, this.collisionHeight)
             this.createItemAnimations(fruitType)
 
-        } 
+        }
         this.scene.items = this.items
     }
 
